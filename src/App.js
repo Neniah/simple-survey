@@ -13,7 +13,7 @@ class App extends Component {
         q3: '',
         q4: ''
       },
-      submitte: false
+      submitted: false
     }
   }
   render() {
@@ -22,23 +22,29 @@ class App extends Component {
     if(this.state.name && this.state.submitted === false){
 
     } else if(!this.state.name && this.state.submitted === false){
-      user = <span>
-        <h2>Please enter your name to begin the survey</h2>
-        <form>
-          <input type="text" placeholder="Enter Name..." ref="name"/>
-        </form>
-      </span>;
+      user = (
+        <div>
+        <span>
+          <h2>Please enter your name to begin the survey</h2>
+          <form>
+            <input type="text" placeholder="Enter Name..." ref="name"/>
+          </form>
+        </span>
+        </div>
+      );
       questions = '';
     } else if(this.state.submitted === true){
 
+
     }
+
     return (
-      <div className="App">
+      <div className="App text-center">
         <div className="App-header">
           <h2>Simple Survey</h2>
         </div>
-        <div class="text-center">
-
+        <div className="text-center">
+          {user}
         </div>
       </div>
     );
