@@ -19,14 +19,27 @@ class App extends Component {
   render() {
     var user;
     var questions;
+    if(this.state.name && this.state.submitted === false){
+
+    } else if(!this.state.name && this.state.submitted === false){
+      user = <span>
+        <h2>Please enter your name to begin the survey</h2>
+        <form>
+          <input type="text" placeholder="Enter Name..." ref="name"/>
+        </form>
+      </span>;
+      questions = '';
+    } else if(this.state.submitted === true){
+
+    }
     return (
       <div className="App">
         <div className="App-header">
           <h2>Simple Survey</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div class="text-center">
+
+        </div>
       </div>
     );
   }
